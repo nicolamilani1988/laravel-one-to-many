@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Employee;
 
 class Task extends Model
 {
@@ -11,4 +12,9 @@ class Task extends Model
         'description',
         'employee_id'
     ];
+
+    public function employee(){
+
+        return $this->belongsTo(Employee::class);
+    }
 }

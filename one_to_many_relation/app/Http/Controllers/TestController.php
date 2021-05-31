@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Employee;
+use App\Task;
 
 class TestController extends Controller
 {
     public function home(){
 
-        return view('pages.home');
+        $employees = Employee::all();
+        $tasks = Task::all();
+        return view('pages.home', compact('employees','tasks'));
     }
 }
