@@ -14,4 +14,13 @@ class TestController extends Controller
         $tasks = Task::all();
         return view('pages.home', compact('employees','tasks'));
     }
+
+    public function employee($id){
+
+        $employee = Employee::findOrFail($id);
+        $tasks = Task::all();
+        //$task = Task::findOrFail($id);
+
+        return view('pages.employee', compact('employee','tasks'));
+    }
 }

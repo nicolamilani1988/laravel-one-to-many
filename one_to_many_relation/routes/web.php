@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TestController@home')
 -> name ('home');
+
+Route::get('/employee/{id}','TestController@employee')
+-> name ('employee');

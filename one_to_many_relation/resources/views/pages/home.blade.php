@@ -4,18 +4,9 @@
     <ul>
         @foreach ($employees as $employee)
             <li>
-                <div>
+                <a href="{{route('employee',$employee->id)}}">
                     <span>[{{$employee->id}}]<strong>{{$employee->firstname}} {{$employee->lastname}}</strong></span>
-                </div>
-                <div>
-                    <span><strong>TASK:</strong></span>
-                    <ul>
-                        @foreach ($employee->tasks as $task)
-                            <p>{{$task->title}} . FATTO DA [{{$task->employee->lastname}}]</p>
-                        @endforeach
-                    </ul>
-                </div>
-                
+                </a>
             </li>
         @endforeach
     </ul>
